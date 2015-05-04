@@ -22,6 +22,21 @@ body {
 	font-family: 'Raleway', Arial, sans-serif;
 }
 
+ul,li {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+footer {
+	height: 100px;
+}
+
 a {
 	color: #4e4a46;
 	text-decoration: none;
