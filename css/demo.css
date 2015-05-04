@@ -15,6 +15,8 @@
 .clearfix:after { clear: both; }
 
 body {
+	height: auto;
+	min-height: 100%;
 	background: #b4bad2;
 	color: #fffce1;
 	font-weight: 400;
@@ -191,6 +193,17 @@ body #cdawrap {
 	top: 35px;
 	right: 35px;
 	bottom: auto;
+}
+.footer {
+	text-align: center;
+	padding-top: 1em;
+	color: black;
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 5em;
+    margin-top: -5em;
+    background-color: #88F7D2;
 }
 
 @media screen and (max-width: 40em) {
