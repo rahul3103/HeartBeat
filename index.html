@@ -11,8 +11,16 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/menu_sideslide.css" />
+		<!-- Image Links -->
+		<link rel="stylesheet" type="text/css" href="css/img-css.css" />
+		<link rel="stylesheet" type="text/css" href="css/img-bookblock.css" />
+		<!-- custom demo style -->
+		<link rel="stylesheet" type="text/css" href="css/demo4.css" />
+		<script src="js/modernizr.custom.js"></script>
+
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script language="JavaScript" type="text/javascript" src="js/verticalmenu.js"></script>
+
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -74,8 +82,154 @@
 						<h1>Off-Canvas Menu Effects <span>Showing (off-canvas) menus stylishly</span></h1>
 					</header>
 					<!-- Related demos -->
-					<section class="related">
+					<section class="img-body">
+						<div class="container-img">
+			<div class="bb-custom-wrapper">
+				
+				<div id="bb-bookblock" class="bb-bookblock">
+					<div class="bb-item">
+						<div class="bb-custom-side bb-firstside">
+							<h1><span></span></h1>
+							<img src="img/1.jpg">
+							
+							
+						</div>
+						<div class="bb-custom-side">
+							<p>A health care provider is an individual or an institution that provides preventive, curative, promotional or rehabilitative health care services in a systematic way to individuals, families or communities.
+							An individual health care provider (also known as a health worker) may be a health care professional, an allied health professional, a community health worker, or another person trained and knowledgeable in medicine, nursing or other allied health professions, or public/community health. Institutions (also known as health facilities) include hospitals, clinics, primary care centres and other service delivery points. The practice of health professionals and operation of health care institutions is typically regulated by national or state/provincial authorities through appropriate regulatory bodies for purposes of quality assurance. Together, they form part of an overall health care system.</p>
+						</div>
+					</div>
+					<div class="bb-item">
+						<div class="bb-custom-side bb-firstside">
+							<img src="img/2.jpg">
+						</div>
+						<div class="bb-custom-side">
+							<p>Pharmaceuticals are entities which manufacture and supply equipment and medicines and support the healthcare providers in providing the best healthcare services. The pharmaceuticals comprise the companies which manufacture medical equipment, drugs, healthcare stationery, etc. Even pharmacies which make the medicines reachable to the common man are part of the Pharmaceutical vertical.</p>
+						</div>
+					</div>
+					<div class="bb-item">
+						<div class="bb-custom-side bb-firstside">
+							<img src="img/3.png">
+						</div>
+						<div class="bb-custom-side">
+							<p>Healthcare payors are entities other than the patient that finance or reimburse the cost of health services. A payor can be categorised into Government Payors or Private Payors. In most cases, this term refers to insurance carriers, other third-party payers, or health plan sponsors (employers or unions).
+							Payer organizations worldwide are focused on managing the gap between funding and medical costs, often in the context of a changing regulatory environment. </p>
+						</div>
+					</div>
+					<div class="bb-item">
+						<div class="bb-custom-side bb-firstside">
+							<img src="img/4.jpg">
+						</div>
+						<div class="bb-custom-side">
+							<p>nsurance carriers come in many forms that can provide various types of policies, such as property and casualty, life insurance and medical or health insurance, to individuals and businesses, depending on their needs. Various activities are performed by an insurance carrier, including the underwriting of a policy prior to issue. An insurance carrier not only sells insurance policies but also pays claims that insureds make on their policies.</p>
+						</div>
+					</div>
+					<div class="bb-item">
+						<div class="bb-custom-side bb-firstside">
+							<p>Jujubes fruitcake tiramisu liquorice chocolate cake. Carrot cake faworki donut soufflé oat cake tootsie roll. Fruitcake fruitcake cake sweet pie jelly beans. Chocolate cake candy jujubes oat cake toffee croissant muffin.</p>
+						</div>
+						<div class="bb-custom-side">
+							<p>Chocolate bar tiramisu marzipan. Croissant soufflé croissant lollipop liquorice dragée chupa chups carrot cake. Liquorice lollipop halvah toffee lollipop.</p>
+						</div>
+					</div>
+				</div>
+
+				<nav class="img-arrows">
+					<a id="bb-nav-first" href="#" class="bb-custom-icon bb-custom-icon-first">First page</a>
+					<a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>
+					<a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>
+					<a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last">Last page</a>
+				</nav>
+
+			</div>
+
+		</div><!-- /container -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquerypp.custom.js"></script>
+		<script src="js/jquery.bookblock.js"></script>
+		<script>
+			var Page = (function() {
+				
+				var config = {
+						$bookBlock : $( '#bb-bookblock' ),
+						$navNext : $( '#bb-nav-next' ),
+						$navPrev : $( '#bb-nav-prev' ),
+						$navFirst : $( '#bb-nav-first' ),
+						$navLast : $( '#bb-nav-last' )
+					},
+					init = function() {
+						config.$bookBlock.bookblock( {
+							speed : 1000,
+							shadowSides : 0.8,
+							shadowFlip : 0.4
+						} );
+						initEvents();
+					},
+					initEvents = function() {
 						
+						var $slides = config.$bookBlock.children();
+
+						// add navigation events
+						config.$navNext.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'next' );
+							return false;
+						} );
+
+						config.$navPrev.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'prev' );
+							return false;
+						} );
+
+						config.$navFirst.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'first' );
+							return false;
+						} );
+
+						config.$navLast.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'last' );
+							return false;
+						} );
+						
+						// add swipe events
+						$slides.on( {
+							'swipeleft' : function( event ) {
+								config.$bookBlock.bookblock( 'next' );
+								return false;
+							},
+							'swiperight' : function( event ) {
+								config.$bookBlock.bookblock( 'prev' );
+								return false;
+							}
+						} );
+
+						// add keyboard events
+						$( document ).keydown( function(e) {
+							var keyCode = e.keyCode || e.which,
+								arrow = {
+									left : 37,
+									up : 38,
+									right : 39,
+									down : 40
+								};
+
+							switch (keyCode) {
+								case arrow.left:
+									config.$bookBlock.bookblock( 'prev' );
+									break;
+								case arrow.right:
+									config.$bookBlock.bookblock( 'next' );
+									break;
+							}
+						} );
+					};
+
+					return { init : init };
+
+			})();
+		</script>
+		<script>
+				Page.init();
+		</script>
 					</section>
 				</div>
 			</div><!-- /content-wrap -->
